@@ -42,21 +42,21 @@ public class AdviceAspectConfig {
     public void before(Long productId){
         System.out.println("###before,get args:"+productId);
     }
-//    @Around("matchException()")
-//    public java.lang.Object after(ProceedingJoinPoint joinPoint){
-//        System.out.println("###before");
-//        java.lang.Object result = null;
-//        try{
-//            result = joinPoint.proceed(joinPoint.getArgs());
-//            System.out.println("###after returning");
-//        }catch (Throwable e){
-//            System.out.println("###ex");
-//            //throw
-//            e.printStackTrace();
-//        }finally {
-//            System.out.println("###finally");
-//        }
-//        return result;
-//    }
+    @Around("matchException()")
+    public java.lang.Object after(ProceedingJoinPoint joinPoint){
+        System.out.println("###before");
+        java.lang.Object result = null;
+        try{
+            result = joinPoint.proceed(joinPoint.getArgs());
+            System.out.println("###after returning");
+        }catch (Throwable e){
+            System.out.println("###ex");
+            //throw
+            e.printStackTrace();
+        }finally {
+            System.out.println("###finally");
+        }
+        return result;
+    }
 
 }

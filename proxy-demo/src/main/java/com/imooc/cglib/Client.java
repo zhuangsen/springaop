@@ -14,6 +14,7 @@ public class Client {
         enhancer.setSuperclass(RealSubject.class);
         enhancer.setCallback(new DemoMethodInterceptor());
         Subject subject = (Subject) enhancer.create();
-        subject.hello();
+//        subject.hello();
+        subject.request();
     }
 }
